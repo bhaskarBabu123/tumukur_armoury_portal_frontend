@@ -1,0 +1,208 @@
+/* src/index.css - Complete Tailwind v4 + Custom Setup (Jan 2026 compatible) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* 
+   Optional legacy config line (uncomment only if you still have/use tailwind.config.js)
+   Most v4 projects drop the .js file entirely.
+*/
+
+/* ==============================================
+   Theme Variables (Light & Dark Mode)
+   ============================================== */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --card:         0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --popover:      0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --primary:      221.2 83.2% 53.3%;     /* ≈ #3b82f6 */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary:    0 84.2% 60.2%;         /* ≈ #ef4444 */
+    --secondary-foreground: 210 40% 98%;
+
+    --success:      142.4 76.2% 36.3%;     /* ≈ #22c55e */
+    --success-foreground: 0 0% 100%;
+
+    --muted:        210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent:       210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive:  0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border:       214.3 31.8% 91.4%;
+    --input:        214.3 31.8% 91.4%;
+    --ring:         221.2 83.2% 53.3%;     /* matches primary */
+
+    --radius:       0.5rem;
+  }
+
+  .dark {
+    --background:   222.2 84% 4.9%;
+    --foreground:   210 40% 98%;
+
+    --card:         222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover:      222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary:      217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+
+    --secondary:    0 62.8% 30.6%;
+    --secondary-foreground: 210 40% 98%;
+
+    --success:      142.4 71.8% 29.4%;
+    --success-foreground: 0 0% 100%;
+
+    --muted:        217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent:       217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive:  0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border:       217.2 32.6% 17.5%;
+    --input:        217.2 32.6% 17.5%;
+    --ring:         224.3 76.3% 48%;
+  }
+
+  /* Global reset using variables directly (fixes most @apply errors) */
+  *,
+  *::before,
+  *::after {
+    border-color: hsl(var(--border));
+    border-width: 0;          /* reset to 0, apply explicitly where needed */
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+}
+
+/* ==============================================
+   Custom Component Classes
+   ============================================== */
+@layer components {
+  .btn-primary {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: hsl(calc(var(--primary-hue) + 5%) calc(var(--primary-saturation)) calc(var(--primary-lightness) - 5%));
+  }
+
+  .btn-primary:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px hsl(var(--ring) / 0.3);
+  }
+
+  .btn-secondary {
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-secondary:hover {
+    background-color: hsl(calc(var(--secondary-hue) + 5%) calc(var(--secondary-saturation)) calc(var(--secondary-lightness) - 5%));
+  }
+
+  .btn-success {
+    background-color: hsl(var(--success));
+    color: hsl(var(--success-foreground));
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-success:hover {
+    background-color: hsl(calc(var(--success-hue) + 5%) calc(var(--success-saturation)) calc(var(--success-lightness) - 5%));
+  }
+
+  .card {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    border-radius: var(--radius);
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid hsl(var(--input));
+    border-radius: var(--radius);
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .input-field:focus {
+    outline: none;
+    border-color: hsl(var(--ring));
+    box-shadow: 0 0 0 3px hsl(var(--ring) / 0.2);
+  }
+
+  .scanner-active {
+    border: 2px solid hsl(var(--success));
+    background-color: hsl(var(--success) / 0.08);
+  }
+
+  .scanner-inactive {
+    border: 2px solid hsl(var(--border));
+    background-color: hsl(var(--muted));
+  }
+}
+
+/* ==============================================
+   Your Original Custom Styles
+   ============================================== */
+.fingerprint-scanner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.toast-container {
+  z-index: 9999;
+}
