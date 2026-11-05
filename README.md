@@ -22,7 +22,7 @@ This update preserves the existing React + Vite frontend and Express + MongoDB b
 ## Setup
 
 1. Copy `backend/.env.example` to `backend/.env` and set your MongoDB Atlas connection string, a new JWT secret, and admin credentials.
-2. Copy root `.env.example` to root `.env` and set `VITE_API_URL` if your API is not at `https://main-armoury-portal-backend.onrender.com/api`.
+2. Copy root `.env.example` to root `.env` and set `VITE_API_URL` if your API is not at `https://tumakur-armoury-portal-backend.onrender.com/api`.
 3. Install frontend dependencies in the project root: `npm install`.
 4. Install backend dependencies: `cd backend && npm install`.
 5. Start backend from the backend folder: `npm run dev`.

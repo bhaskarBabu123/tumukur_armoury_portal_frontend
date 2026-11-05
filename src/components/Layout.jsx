@@ -57,7 +57,7 @@ const Layout = ({ children }) => {
             <Logo/>
             <div>
               <h1 className="text-sm font-black tracking-tighter leading-none">ARMOURY PORTAL</h1>
-              <p className="text-[10px] text-red-200/80 font-bold uppercase tracking-widest mt-1">KSRP • Karnataka</p>
+              <p className="text-[10px] text-red-200/80 font-bold uppercase tracking-widest mt-1">Tumkur</p>
             </div>
           </div>
         </div>

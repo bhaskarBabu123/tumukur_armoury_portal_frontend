@@ -11,7 +11,7 @@ import { officersAPI, transactionsAPI } from '../utils/api'
 import { useFingerprint } from '../contexts/FingerprintContext'
 import OfficerHistoryModal from '../components/OfficerHistoryModal'
 
-const API_ROOT = (import.meta.env.VITE_API_URL || 'https://main-armoury-portal-backend.onrender.com/api')
+const API_ROOT = (import.meta.env.VITE_API_URL || 'https://tumakur-armoury-portal-backend.onrender.com/api')
   .replace(/\/api\/?$/, '')
 
 const PROFILE_PLACEHOLDER = 'https://via.placeholder.com/100?text=OFFICER'

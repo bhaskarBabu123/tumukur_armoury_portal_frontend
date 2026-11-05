@@ -10,7 +10,7 @@ import {
 } from 'lucide-react'
 import FingerprintScanner from '../components/FingerprintScanner'
 
-const API_ROOT = (import.meta.env.VITE_API_URL || 'https://main-armoury-portal-backend.onrender.com/api').replace(/\/api\/?$/, '')
+const API_ROOT = (import.meta.env.VITE_API_URL || 'https://tumakur-armoury-portal-backend.onrender.com/api').replace(/\/api\/?$/, '')
 
 const MAX_PHOTO_SIZE = 5 * 1024 * 1024 // 5MB
 

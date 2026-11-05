@@ -64,8 +64,8 @@ const Dashboard = () => {
         <div className="flex items-center gap-4">
           <Logo/>
           <div>
-            <h1 className="text-xl font-black text-slate-900 uppercase tracking-tighter">Armoury Control Terminal</h1>
-            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">KSRP Unit-01 • Sector HQ</p>
+            <h1 className="text-xl font-black text-slate-900 uppercase tracking-tighter">Tumkur District Police Arms</h1>
+            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">Armoury Management Portal</p>
           </div>
         </div>
         
